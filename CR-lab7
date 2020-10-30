@@ -1,0 +1,232 @@
+CR lab7
+_______________________________________________________________________________________________
+1)
+
+fichier header:
+
+#ifndef H_max_H
+#define H_max_H
+
+
+void max(int tab[],int n, int *max);//on déclare que l'entête
+
+#endif
+
+fichier source:
+_______________________________________________________________________________________________
+#include <stdlib.h>
+#include <stdio.h>
+#include "max.h"
+
+void max(int tab[],int n, int *max)
+
+{
+for (int i=0;i<n;i++)
+{
+if(tab[i] > *max)
+{
+      *max=tab[i];
+}
+}
+
+}
+
+fichier main:
+_______________________________________________________________________________________________
+#include <stdlib.h>
+#include <stdio.h>
+#include "max.h"
+
+int main (void)
+{
+
+ int maxi =0;
+ int tab[5]= {2,5,7,2,9}; max(tab,5,&maxi);
+ printf("La valeur max vaut : %d", maxi);
+
+return 0;
+
+ }
+
+_______________________________________________________________________________________________
+2) gcc -o prog -Wall max.c testmax.c
+
+Cette commande permet de compiler tout les fichiers sources du projet et de créer un fichier éxecutable.
+
+./prog (Permet d'éxécuter le fichier, le résutlat est bien affiché dans le terminal)
+_______________________________________________________________________________________________
+3)
+
+Pour le fichier max
+gcc -E max.c -o max.i
+gcc -S max.i
+gcc -c max.s 
+
+Pour le fichier testmax
+gcc -E testmax.c -o testmax.i
+gcc -S testmax.i
+gcc -c testmax.s 
+
+
+_______________________________________________________________________________________________
+4)
+On a des fichiers .i:
+Le compilateur traduit les fichiers sources (.c) en fichiers texte (.i).
+
+On a des fichiers .s: 
+Le compilateur traduit les fichiers post processé (.i) en language assembleur (.s).
+
+On a des fichiers .c:
+Le compilateur traduit les fichiers en assembleur (.s) en fichier objet (.o).
+
+_______________________________________________________________________________________________
+5) la fonction est remplacée par le binaire correspondant l'orsque le compilateur creer les fichier objet .o qui sont des fichiers binaire.
+
+Si on essaye d'exécuter le fichier .o on a :
+bash: ./testmax.o: cannot execute binary file: Exec format error
+
+_______________________________________________________________________________________________
+6)
+fichier header:
+
+#ifndef H_min_H
+#define H_min_H
+
+
+void min(int tab[],int n, int *min);//on déclare que l'entête
+
+#endif
+
+fichier source:
+_______________________________________________________________________________________________
+#include <stdlib.h>
+#include <stdio.h>
+#include "min.h"
+
+void min(int tab[],int n, int *min)
+
+{
+for (int i=0;i<n;i++)
+{
+if(tab[i] < *min)
+{
+      *min=tab[i];
+}
+}
+
+}
+
+fichier main:
+_______________________________________________________________________________________________
+#include <stdlib.h>
+#include <stdio.h>
+#include "min.h"
+
+int main (void)
+{
+
+ int mini =100;
+ int tab[5]= {2,5,7,2,9}; min(tab,5,&mini);
+ printf("La valeur min vaut : %d", mini);
+
+return 0;
+
+ }
+
+_______________________________________________________________________________________________
+7)
+fichier header:
+
+#ifndef H_variance_H
+#define H_variance_H
+
+
+void variance(int tab[],int n, float *var);//on déclare que l'entête
+
+#endif
+_______________________________________________________________________________________________
+
+fichier source:
+
+#include <stdlib.h>
+#include <stdio.h>
+#include "variance.h"
+
+void variance(int tab[],int n, float *var)
+
+{
+        float vari=0;
+        float M=0;
+        for (int i=0;i<n;i++)
+        {
+                M=tab[i]+M;
+        }
+        M=M/n;
+        for (int i=0;i<n;i++)
+        {
+               vari=(tab[i]-M)*(tab[i]-M)+vari;
+
+        }
+        *var =(1/(float)n)* vari;
+
+}
+
+
+_______________________________________________________________________________________________
+fichier main:
+
+#include <stdlib.h>
+#include <stdio.h>
+#include "variance.h"
+
+int main (void)
+{
+
+ float var;
+ int tab[5]= {2,5,7,2,9}; variance(tab,5,&var);
+ printf("La valeur de la variance vaut : %f", var);
+
+return 0;
+
+ }
+
+Commande de compilation et de création de l'exécutable:
+gcc -o progvariance variance.c testvariance.c
+
+Lancement de l'éxécution:
+./progvariance
+_______________________________________________________________________________________________
+8)
+fichier source
+
+#include <stdlib.h>
+#include <stdio.h>
+#include "max.h"
+#include "min.h"
+#include "variance.h"
+
+int main()
+{
+        int tab[10]={4,9,10,11,12,15,12,9,0,30};
+        int maxi=0;
+        int mini=100;
+        float var;
+        max(tab,10,&maxi);
+        min(tab,10,&mini);
+        variance(tab,10,&var);
+        printf("La maximum est :%d \n",maxi);
+        printf("La minimum est :%d \n",mini);
+        printf("La variance :%f \n",var);
+
+
+
+        return 0;
+}
+
+Commande de compilation et de création de l'exécutable:
+gcc -o progquestion8 test.c max.c min.c variance.c
+
+Lancement de l'éxécution:
+./progquestion8
+
+_______________________________________________________________________________________________
