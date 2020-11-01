@@ -49,9 +49,15 @@ return 0;
  }
 
 _______________________________________________________________________________________________
-2) gcc -o prog -Wall max.c testmax.c
+2) 
+compilation des fichiers sources:
+gcc -c testmax.c
+gcc -c max.c
 
-Cette commande permet de compiler tout les fichiers sources du projet et de créer un fichier éxecutable.
+Création de l'exécutable:
+gcc -o prog -Wall max.c testmax.c
+
+Cette commande permet de créer un fichier éxecutable.
 
 ./prog (Permet d'éxécuter le fichier, le résutlat est bien affiché dans le terminal)
 _______________________________________________________________________________________________
@@ -189,8 +195,11 @@ int main (void)
 return 0;
 
  }
+Commande de compilation:
+gcc -c variance.c 
+gcc -c testvariance.c
 
-Commande de compilation et de création de l'exécutable:
+Commande de création de l'exécutable:
 gcc -o progvariance variance.c testvariance.c
 
 Lancement de l'éxécution:
@@ -222,8 +231,13 @@ int main()
 
         return 0;
 }
+Commande de compilation:
+gcc -c test.c
+gcc -c max.c
+gcc -c min.c
+gcc -c variance.c
 
-Commande de compilation et de création de l'exécutable:
+Commande de création de l'exécutable:
 gcc -o progquestion8 test.c max.c min.c variance.c
 
 Lancement de l'éxécution:
