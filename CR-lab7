@@ -1,6 +1,5 @@
 CR lab7
-_______________________________________________________________________________________________
-1)
+________________________________________________________________________________1)
 
 fichier header:
 
@@ -13,7 +12,7 @@ void max(int tab[],int n, int *max);//on déclare que l'entête
 #endif
 
 fichier source:
-_______________________________________________________________________________________________
+________________________________________________________________________________
 #include <stdlib.h>
 #include <stdio.h>
 #include "max.h"
@@ -32,8 +31,7 @@ if(tab[i] > *max)
 }
 
 fichier main:
-_______________________________________________________________________________________________
-#include <stdlib.h>
+________________________________________________________________________________#include <stdlib.h>
 #include <stdio.h>
 #include "max.h"
 
@@ -48,20 +46,19 @@ return 0;
 
  }
 
-_______________________________________________________________________________________________
-2) 
+________________________________________________________________________________2)
+ 
 compilation des fichiers sources:
 gcc -c testmax.c
 gcc -c max.c
 
 Création de l'exécutable:
-gcc -o prog -Wall max.c testmax.c
+gcc -o prog max.c testmax.c
 
 Cette commande permet de créer un fichier éxecutable.
 
 ./prog (Permet d'éxécuter le fichier, le résutlat est bien affiché dans le terminal)
-_______________________________________________________________________________________________
-3)
+________________________________________________________________________________3)
 
 Pour le fichier max
 gcc -E max.c -o max.i
@@ -73,9 +70,7 @@ gcc -E testmax.c -o testmax.i
 gcc -S testmax.i
 gcc -c testmax.s 
 
-
-_______________________________________________________________________________________________
-4)
+________________________________________________________________________________4)
 On a des fichiers .i:
 Le compilateur traduit les fichiers sources (.c) en fichiers texte (.i).
 
@@ -85,13 +80,13 @@ Le compilateur traduit les fichiers post processé (.i) en language assembleur (
 On a des fichiers .c:
 Le compilateur traduit les fichiers en assembleur (.s) en fichier objet (.o).
 
-_______________________________________________________________________________________________
-5) la fonction est remplacée par le binaire correspondant l'orsque le compilateur creer les fichier objet .o qui sont des fichiers binaire.
+________________________________________________________________________________
+5) la fonction est remplacée par le binaire correspondant l'orsque le compilateur creer les fichier objet .o qui sont des fichiers binaires.
 
 Si on essaye d'exécuter le fichier .o on a :
 bash: ./testmax.o: cannot execute binary file: Exec format error
 
-_______________________________________________________________________________________________
+________________________________________________________________________________
 6)
 fichier header:
 
@@ -104,7 +99,8 @@ void min(int tab[],int n, int *min);//on déclare que l'entête
 #endif
 
 fichier source:
-_______________________________________________________________________________________________
+________________________________________________________________________________
+
 #include <stdlib.h>
 #include <stdio.h>
 #include "min.h"
@@ -123,7 +119,8 @@ if(tab[i] < *min)
 }
 
 fichier main:
-_______________________________________________________________________________________________
+________________________________________________________________________________
+
 #include <stdlib.h>
 #include <stdio.h>
 #include "min.h"
@@ -139,8 +136,11 @@ return 0;
 
  }
 
-_______________________________________________________________________________________________
-7)
+test de bon fonctionneent:
+compilation: gcc -c min.c et gcc -c testmin.c
+création de l'exécutalbe: gcc -o  progmin min.c testmin.c
+exécution: ./progmin
+________________________________________________________________________________7)
 fichier header:
 
 #ifndef H_variance_H
@@ -150,7 +150,7 @@ fichier header:
 void variance(int tab[],int n, float *var);//on déclare que l'entête
 
 #endif
-_______________________________________________________________________________________________
+________________________________________________________________________________
 
 fichier source:
 
@@ -178,7 +178,7 @@ void variance(int tab[],int n, float *var)
 }
 
 
-_______________________________________________________________________________________________
+________________________________________________________________________________
 fichier main:
 
 #include <stdlib.h>
@@ -195,6 +195,7 @@ int main (void)
 return 0;
 
  }
+
 Commande de compilation:
 gcc -c variance.c 
 gcc -c testvariance.c
@@ -204,7 +205,8 @@ gcc -o progvariance variance.c testvariance.c
 
 Lancement de l'éxécution:
 ./progvariance
-_______________________________________________________________________________________________
+________________________________________________________________________________
+
 8)
 fichier source
 
@@ -231,6 +233,7 @@ int main()
 
         return 0;
 }
+
 Commande de compilation:
 gcc -c test.c
 gcc -c max.c
@@ -243,4 +246,4 @@ gcc -o progquestion8 test.c max.c min.c variance.c
 Lancement de l'éxécution:
 ./progquestion8
 
-_______________________________________________________________________________________________
+________________________________________________________________________________
