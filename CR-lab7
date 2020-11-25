@@ -53,7 +53,7 @@ gcc -c testmax.c
 gcc -c max.c
 
 Création de l'exécutable:
-gcc -o prog max.c testmax.c
+gcc -o prog max.o testmax.o
 
 Cette commande permet de créer un fichier éxecutable.
 
@@ -138,7 +138,7 @@ return 0;
 
 test de bon fonctionneent:
 compilation: gcc -c min.c et gcc -c testmin.c
-création de l'exécutalbe: gcc -o  progmin min.c testmin.c
+création de l'exécutalbe: gcc -o  progmin min.o testmin.o
 exécution: ./progmin
 ________________________________________________________________________________7)
 fichier header:
@@ -201,7 +201,7 @@ gcc -c variance.c
 gcc -c testvariance.c
 
 Commande de création de l'exécutable:
-gcc -o progvariance variance.c testvariance.c
+gcc -o progvariance variance.o testvariance.o
 
 Lancement de l'éxécution:
 ./progvariance
@@ -241,7 +241,7 @@ gcc -c min.c
 gcc -c variance.c
 
 Commande de création de l'exécutable:
-gcc -o progquestion8 test.c max.c min.c variance.c
+gcc -o progquestion8 test.o max.o min.o variance.o
 
 Lancement de l'éxécution:
 ./progquestion8
