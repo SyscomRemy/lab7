@@ -53,11 +53,11 @@ gcc -c testmax.c
 gcc -c max.c
 
 Création de l'exécutable:
-gcc -o prog max.o testmax.o
+gcc -o progmax max.o testmax.o
 
 Cette commande permet de créer un fichier éxecutable.
 
-./prog (Permet d'éxécuter le fichier, le résutlat est bien affiché dans le terminal)
+./progmax (Permet d'éxécuter le fichier, le résutlat est bien affiché dans le terminal)
 ________________________________________________________________________________3)
 
 Pour le fichier max
